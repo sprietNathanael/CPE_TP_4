@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifndef FILE_H
-#define FILE_H
+#ifndef LIST_H
+#define LIST_H
 
 /*
 ***************************** Structures *************************
