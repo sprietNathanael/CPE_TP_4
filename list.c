@@ -62,6 +62,21 @@ Element* addAtIndex(Element* headOfList, int value, unsigned int index)
 	}
 	return(headOfList);
 }
+
+Element* fillList(Element* headOfList, int array[], unsigned int arrayLength)
+{
+	Element* firstElement = createElement(array[0]);
+	Element* intermediateElement = firstElement;
+	int i = 1;
+	for(i = 1; i < arrayLength; i++)
+	{
+		intermediateElement->next = createElement(array[i]);
+		intermediateElement = intermediateElement->next;
+	}
+	intermediateElement = findTheEndOfElement(headOfList);
+	intermediateElement->next = firstElement;
+	return(headOfList);
+}
 /*
 ***************************** Static Functions *************************
 */

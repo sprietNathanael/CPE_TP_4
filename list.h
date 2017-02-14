@@ -82,7 +82,7 @@ Element* addAtIndex(Element* headOfList, int value, unsigned int index);
  *
  * @return     The new list
  */
-Element* fillElement(Element* headOfList, int array[], unsigned int arrayLength);
+Element* fillList(Element* headOfList, int array[], unsigned int arrayLength);
 
 /**
  * @brief      Find the first occurrence of a given value

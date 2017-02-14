@@ -48,5 +48,9 @@ int main()
 	printf(ANSI_COLOR_BLUE"Add 8 at the index 20:\n"ANSI_COLOR_RESET);
 	myList = addAtIndex(myList,8,20);
 	printElement(myList);
+	int test[] = {9,9,9,9,9};
+	printf(ANSI_COLOR_BLUE"Add 5x 9 at the end of the list:\n"ANSI_COLOR_RESET);
+	myList = fillList(myList,test,5);
+	printElement(myList);
 	return 0;
 }
