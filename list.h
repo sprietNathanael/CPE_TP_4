@@ -13,4 +13,23 @@
 #ifndef FILE_H
 #define FILE_H
 
+/*
+***************************** Structures *************************
+*/
+
+/**
+* @brief      A type defined over the list structure
+*/
+typedef struct list List;
+
+/**
+ * @brief      Represents a chained list
+ */
+struct list
+{
+	int value;/*!< The item value */
+	List* next;/*!< The item next neighbour */
+};
+
+
 #endif
