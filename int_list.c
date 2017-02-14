@@ -111,10 +111,10 @@ Element* removeFromList(Element* headOfList, int valueToRemove)
 		{
 			intermediateElement = intermediateElement->next;
 		}
-		if(intermediateElement->next)
+		if(intermediateElement->next != NULL)
 		{
+			free(intermediateElement->next);
 			intermediateElement->next = intermediateElement->next->next;
-			free(intermediateElement);
 		}
 	}
 	return(headOfList);
