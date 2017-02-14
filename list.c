@@ -12,13 +12,13 @@
 ***************************** Functions *************************
 */
 
-void printElement(Element* headOfList)
+void printList(Element* headOfList)
 {
 	printf("%d",headOfList->value);
 	if(headOfList->next != NULL)
 	{
 		printf("->");
-		printElement(headOfList->next);
+		printList(headOfList->next);
 	}
 	else
 	{
@@ -28,7 +28,7 @@ void printElement(Element* headOfList)
 
 Element* addAtEnd(Element* headOfList, int value)
 {
-	Element* lastElement = findTheEndOfElement(headOfList);
+	Element* lastElement = findTheEndOfList(headOfList);
 	lastElement->next = createElement(value);
 	return(headOfList);
 }
@@ -73,7 +73,7 @@ Element* fillList(Element* headOfList, int array[], unsigned int arrayLength)
 		intermediateElement->next = createElement(array[i]);
 		intermediateElement = intermediateElement->next;
 	}
-	intermediateElement = findTheEndOfElement(headOfList);
+	intermediateElement = findTheEndOfList(headOfList);
 	intermediateElement->next = firstElement;
 	return(headOfList);
 }
@@ -134,11 +134,11 @@ void emptyList(Element** headOfList)
 ***************************** Static Functions *************************
 */
 
-static Element* findTheEndOfElement(Element* headOfList)
+static Element* findTheEndOfList(Element* headOfList)
 {
 	if(headOfList->next != NULL)
 	{
-		Element* intermediateElement = findTheEndOfElement(headOfList->next);
+		Element* intermediateElement = findTheEndOfList(headOfList->next);
 	}
 	else
 	{

@@ -40,7 +40,7 @@ struct element
  *
  * @param      headOfList  The list to print
  */
-void printElement(Element *headOfList);
+void printLis(Element *headOfList);
 
 /**
  * @brief      Adds an element at the end of the list.
@@ -103,7 +103,7 @@ int findInList(Element* headOfList, int valueToFind);
  *
  * @return     The new list
  */
-Element* removeFromElement(Element* headOfList, int valueToRemove);
+Element* removeFromList(Element* headOfList, int valueToRemove);
 
 /**
  * @brief      Remove the list from the memory
@@ -123,7 +123,7 @@ void emptyList(Element** headOfList);
  *
  * @return     The last element of the list
  */
-static Element* findTheEndOfElement(Element* headOfList);
+static Element* findTheEndOfList(Element* headOfList);
 
 /**
  * @brief      Creates an element
