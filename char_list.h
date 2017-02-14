@@ -14,7 +14,6 @@
 #ifndef CHAR_LIST_H
 #define CHAR_LIST_H
 
-#define MAX_WORD_LENGTH 50
 
 /*
 ***************************** Structures *************************
@@ -30,7 +29,7 @@ typedef struct element Element;
  */
 struct element
 {
-	char value[MAX_WORD_LENGTH];/*!< The item value */
+	char* value;/*!< The item value */
 	Element* next;/*!< The item next neighbour */
 };
 
@@ -43,7 +42,7 @@ struct element
  *
  * @param      headOfList  The list to print
  */
-void printLis(Element *headOfList);
+void printList(Element *headOfList);
 
 /**
  * @brief      Adds an element at the end of the list.

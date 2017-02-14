@@ -19,7 +19,9 @@
 int main()
 {
 	Element* myList = malloc(sizeof(Element));
-	strcpy(myList->value,"test1");
+	char* myString = malloc(sizeof(char)*(strlen("test1")+1));
+	strcpy(myString,"test1");
+	myList->value = myString;
 	myList->next = NULL;
 	printf(ANSI_COLOR_BLUE"First display :\n"ANSI_COLOR_RESET);
 	printList(myList);

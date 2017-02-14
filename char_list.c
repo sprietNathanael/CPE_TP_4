@@ -149,7 +149,9 @@ static Element* findTheEndOfList(Element* headOfList)
 static Element* createElement(char* value)
 {
 	Element* newElement = malloc(sizeof(Element));
-	strcpy(newElement->value,value);
+	char* newString = malloc(sizeof(char)*(strlen(value)+1));
+	strcpy(newString,value);
+	newElement->value = newString;
 	newElement->next = NULL;
 	return(newElement);
 }
