@@ -7,3 +7,18 @@
  * @date       14/02/2017
  */
 #include "list.h"
+
+void printList(List* list)
+{
+	printf("%d",list->value);
+	if(list->next != NULL)
+	{
+		printf("->");
+		printList(list->next);
+	}
+	else
+	{
+		printf("\n");
+	}
+
+}

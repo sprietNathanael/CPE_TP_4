@@ -13,6 +13,9 @@
 
 int main()
 {
-
+	List* myList = malloc(sizeof(List));
+	myList->value = 1;
+	myList->next = NULL;
+	printList(myList);
 	return 0;
 }
