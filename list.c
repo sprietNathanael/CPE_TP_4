@@ -12,13 +12,13 @@
 ***************************** Functions *************************
 */
 
-void printList(List* list)
+void printElement(Element* headOfList)
 {
-	printf("%d",list->value);
-	if(list->next != NULL)
+	printf("%d",headOfList->value);
+	if(headOfList->next != NULL)
 	{
 		printf("->");
-		printList(list->next);
+		printElement(headOfList->next);
 	}
 	else
 	{
@@ -26,32 +26,32 @@ void printList(List* list)
 	}
 }
 
-List* addAtEnd(List* list, int value)
+Element* addAtEnd(Element* headOfList, int value)
 {
-	List* lastElement = findTheEndOfList(list);
+	Element* lastElement = findTheEndOfElement(headOfList);
 	lastElement->next = createElement(value);
-	return(list);
+	return(headOfList);
 }
 
 /*
 ***************************** Static Functions *************************
 */
 
-List* findTheEndOfList(List* list)
+Element* findTheEndOfElement(Element* headOfList)
 {
-	if(list->next != NULL)
+	if(headOfList->next != NULL)
 	{
-		findTheEndOfList(list->next);
+		findTheEndOfElement(headOfList->next);
 	}
 	else
 	{
-		return(list);
+		return(headOfList);
 	}
 }
 
-List* createElement(int value)
+Element* createElement(int value)
 {
-	List* newElement = malloc(sizeof(List));
+	Element* newElement = malloc(sizeof(Element));
 	newElement->value = value;
 	newElement->next = NULL;
 	return(newElement);

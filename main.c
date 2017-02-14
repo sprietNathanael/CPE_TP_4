@@ -13,11 +13,14 @@
 
 int main()
 {
-	List* myList = malloc(sizeof(List));
+	Element* myList = malloc(sizeof(Element));
 	myList->value = 1;
 	myList->next = NULL;
-	printList(myList);
+	printElement(myList);
 	myList = addAtEnd(myList,5);
-	printList(myList);
+	myList = addAtEnd(myList,7);
+	myList = addAtEnd(myList,3);
+	myList = addAtEnd(myList,8);
+	printElement(myList);
 	return 0;
 }

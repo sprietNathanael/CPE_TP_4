@@ -18,17 +18,17 @@
 */
 
 /**
-* @brief      A type defined over the list structure
-*/
-typedef struct list List;
+ * @brief      A type defined over the element structure
+ */
+typedef struct element Element;
 
 /**
- * @brief      Represents a chained list
+ * @brief      Represents a chained list of element
  */
-struct list
+struct element
 {
 	int value;/*!< The item value */
-	List* next;/*!< The item next neighbour */
+	Element* next;/*!< The item next neighbour */
 };
 
 /*
@@ -38,79 +38,79 @@ struct list
 /**
  * @brief      Prints recursively a list
  *
- * @param      listToPrint  The list to print
+ * @param      headOfList  The list to print
  */
-void printList(List *listToPrint);
+void printElement(Element *headOfList);
 
 /**
  * @brief      Adds an element at the end of the list.
  *
- * @param      list   The list where the element will be added
- * @param[in]  value  The value of the element to add
+ * @param      headOfList  The list where the element will be added
+ * @param[in]  value       The value of the element to add
  *
  * @return     The new list
  */
-List* addAtEnd(List* list, int value);
+Element* addAtEnd(Element* headOfList, int value);
 
 /**
  * @brief      Adds an element at the begining of the list.
  *
- * @param      list   The list where the element will be added
- * @param[in]  value  The value of the element to add
+ * @param      headOfList  The list where the element will be added
+ * @param[in]  value       The value of the element to add
  *
  * @return     The new list
  */
-List* addAtBegining(List* list, int value);
+Element* addAtBegining(Element* headOfList, int value);
 
 /**
  * @brief      Adds an element ata given index in the list.
  *
- * @param      list   The list where the element will be added
- * @param[in]  value  The value of the element to add
- * @param[in]  index  The index of the list where the element will be added
+ * @param      headOfList  The list where the element will be added
+ * @param[in]  value       The value of the element to add
+ * @param[in]  index       The index of the list where the element will be added
  *
  * @return     The new list
  */
-List* addAtIndex(List* list, int value, unsigned int index);
+Element* addAtIndex(Element* headOfList, int value, unsigned int index);
 
 /**
  * @brief      Append to a list a value array.
  *
- * @param      list         The list to be filled
+ * @param      headOfList   The list to be filled
  * @param      array        The array of value that will be append to the list
  * @param[in]  arrayLength  The array length
  *
  * @return     The new list
  */
-List* fillList(List* list, int array[], unsigned int arrayLength);
+Element* fillElement(Element* headOfList, int array[], unsigned int arrayLength);
 
 /**
  * @brief      Find the first occurrence of a given value
  *
- * @param      list         The list where the value will be searched
+ * @param      headOfList   The list where the value will be searched
  * @param[in]  valueToFind  The value to find
  *
  * @return     The index of the found value, or -1 if the value has not been
  *             found
  */
-int findInList(List* list, int valueToFind);
+int findInElement(Element* headOfList, int valueToFind);
 
 /**
  * @brief      Removes the first occurrence of a given value
  *
- * @param      list           The list where the value will be remove
+ * @param      headOfList     The list where the value will be remove
  * @param[in]  valueToRemove  The value to remove
  *
  * @return     The new list
  */
-List* removeFromList(List* list, int valueToRemove);
+Element* removeFromElement(Element* headOfList, int valueToRemove);
 
 /**
  * @brief      Remove the list from the memory
  *
- * @param      list  The list to be removed
+ * @param      headOfList  The list to be removed
  */
-void emptyList(List** list);
+void emptyElement(Element** headOfList);
 
 /*
 ***************************** Static Functions *************************
@@ -119,11 +119,11 @@ void emptyList(List** list);
 /**
  * @brief      Finds recursively the end of the list
  *
- * @param      list  The list
+ * @param      headOfList  The list
  *
  * @return     The last element of the list
  */
-static List* findTheEndOfList(List* list);
+static Element* findTheEndOfElement(Element* headOfList);
 
 /**
  * @brief      Creates an element
@@ -132,5 +132,5 @@ static List* findTheEndOfList(List* list);
  *
  * @return     The new element
  */
-static List* createElement(int value);
+static Element* createElement(int value);
 #endif
