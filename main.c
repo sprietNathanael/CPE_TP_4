@@ -55,5 +55,14 @@ int main()
 	printf(ANSI_COLOR_BLUE"The index of the first 1 is %d\n"ANSI_COLOR_RESET,findInList(myList,1));
 	printf(ANSI_COLOR_BLUE"The index of the first 7 is %d\n"ANSI_COLOR_RESET,findInList(myList,7));
 	printf(ANSI_COLOR_BLUE"The index of the first 100 is %d\n"ANSI_COLOR_RESET,findInList(myList,100));
+	myList = removeFromList(myList,5);
+	printf(ANSI_COLOR_BLUE"Remove the first 5 \n"ANSI_COLOR_RESET,findInList(myList,100));
+	printElement(myList);
+	myList = removeFromList(myList,4);
+	printf(ANSI_COLOR_BLUE"Remove the first 4 \n"ANSI_COLOR_RESET,findInList(myList,100));
+	printElement(myList);
+	myList = removeFromList(myList,100);
+	printf(ANSI_COLOR_BLUE"Remove the first 100 \n"ANSI_COLOR_RESET,findInList(myList,100));
+	printElement(myList);
 	return 0;
 }

@@ -96,6 +96,28 @@ int findInList(Element* headOfList, int valueToFind)
 		return(result);
 	}
 }
+
+Element* removeFromList(Element* headOfList, int valueToRemove)
+{
+	Element* intermediateElement = headOfList;
+	if(intermediateElement->value == valueToRemove)
+	{
+		headOfList = intermediateElement->next;
+	}
+	else
+	{
+		while(intermediateElement->next != NULL && intermediateElement->next->value != valueToRemove)
+		{
+			intermediateElement = intermediateElement->next;
+		}
+		if(intermediateElement->next)
+		{
+			intermediateElement->next = intermediateElement->next->next;
+		}
+	}
+	return(headOfList);
+
+}
 /*
 ***************************** Static Functions *************************
 */
