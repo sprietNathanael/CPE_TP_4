@@ -36,7 +36,7 @@ struct list
 */
 
 /**
- * @brief      Prints a list
+ * @brief      Prints recursively a list
  *
  * @param      listToPrint  The list to print
  */
@@ -112,4 +112,25 @@ List* removeFromList(List* list, int valueToRemove);
  */
 void emptyList(List** list);
 
+/*
+***************************** Static Functions *************************
+*/
+
+/**
+ * @brief      Finds recursively the end of the list
+ *
+ * @param      list  The list
+ *
+ * @return     The last element of the list
+ */
+static List* findTheEndOfList(List* list);
+
+/**
+ * @brief      Creates an element
+ *
+ * @param[in]  value  The value of the new element
+ *
+ * @return     The new element
+ */
+static List* createElement(int value);
 #endif

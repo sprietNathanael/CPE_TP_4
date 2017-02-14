@@ -8,6 +8,10 @@
  */
 #include "list.h"
 
+/*
+***************************** Functions *************************
+*/
+
 void printList(List* list)
 {
 	printf("%d",list->value);
@@ -20,5 +24,35 @@ void printList(List* list)
 	{
 		printf("\n");
 	}
+}
 
+List* addAtEnd(List* list, int value)
+{
+	List* lastElement = findTheEndOfList(list);
+	lastElement->next = createElement(value);
+	return(list);
+}
+
+/*
+***************************** Static Functions *************************
+*/
+
+List* findTheEndOfList(List* list)
+{
+	if(list->next != NULL)
+	{
+		findTheEndOfList(list->next);
+	}
+	else
+	{
+		return(list);
+	}
+}
+
+List* createElement(int value)
+{
+	List* newElement = malloc(sizeof(List));
+	newElement->value = value;
+	newElement->next = NULL;
+	return(newElement);
 }

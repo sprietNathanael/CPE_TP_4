@@ -17,5 +17,7 @@ int main()
 	myList->value = 1;
 	myList->next = NULL;
 	printList(myList);
+	myList = addAtEnd(myList,5);
+	printList(myList);
 	return 0;
 }
