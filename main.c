@@ -52,5 +52,8 @@ int main()
 	printf(ANSI_COLOR_BLUE"Add 5x 9 at the end of the list:\n"ANSI_COLOR_RESET);
 	myList = fillList(myList,test,5);
 	printElement(myList);
+	printf(ANSI_COLOR_BLUE"The index of the first 1 is %d\n"ANSI_COLOR_RESET,findInList(myList,1));
+	printf(ANSI_COLOR_BLUE"The index of the first 7 is %d\n"ANSI_COLOR_RESET,findInList(myList,7));
+	printf(ANSI_COLOR_BLUE"The index of the first 100 is %d\n"ANSI_COLOR_RESET,findInList(myList,100));
 	return 0;
 }

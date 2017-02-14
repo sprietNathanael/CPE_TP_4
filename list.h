@@ -93,7 +93,7 @@ Element* fillList(Element* headOfList, int array[], unsigned int arrayLength);
  * @return     The index of the found value, or -1 if the value has not been
  *             found
  */
-int findInElement(Element* headOfList, int valueToFind);
+int findInList(Element* headOfList, int valueToFind);
 
 /**
  * @brief      Removes the first occurrence of a given value

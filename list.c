@@ -77,6 +77,25 @@ Element* fillList(Element* headOfList, int array[], unsigned int arrayLength)
 	intermediateElement->next = firstElement;
 	return(headOfList);
 }
+
+int findInList(Element* headOfList, int valueToFind)
+{
+	Element* intermediateElement = headOfList;
+	int result = 0;
+	while(intermediateElement != NULL && intermediateElement->value != valueToFind)
+	{
+		result++;
+		intermediateElement = intermediateElement->next;
+	}
+	if(intermediateElement == NULL)
+	{
+		return(-1);
+	}
+	else
+	{
+		return(result);
+	}
+}
 /*
 ***************************** Static Functions *************************
 */
