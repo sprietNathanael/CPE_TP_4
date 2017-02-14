@@ -103,6 +103,7 @@ Element* removeFromList(Element* headOfList, int valueToRemove)
 	if(intermediateElement->value == valueToRemove)
 	{
 		headOfList = intermediateElement->next;
+		free(intermediateElement);
 	}
 	else
 	{
@@ -113,10 +114,21 @@ Element* removeFromList(Element* headOfList, int valueToRemove)
 		if(intermediateElement->next)
 		{
 			intermediateElement->next = intermediateElement->next->next;
+			free(intermediateElement);
 		}
 	}
 	return(headOfList);
 
+}
+
+void emptyList(Element** headOfList)
+{
+	if(*headOfList != NULL)
+	{
+		emptyList(&((*headOfList)->next));
+		free(*headOfList);
+		*headOfList = NULL;
+	}
 }
 /*
 ***************************** Static Functions *************************

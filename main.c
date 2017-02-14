@@ -64,5 +64,11 @@ int main()
 	myList = removeFromList(myList,100);
 	printf(ANSI_COLOR_BLUE"Remove the first 100 \n"ANSI_COLOR_RESET,findInList(myList,100));
 	printElement(myList);
+	printList(myList);
+	emptyList(&myList);
+	if(myList != NULL)
+	{
+		printf(ANSI_COLOR_RED"ERROR ! myList = %x\n"ANSI_COLOR_RESET,myList);
+	}
 	return 0;
 }

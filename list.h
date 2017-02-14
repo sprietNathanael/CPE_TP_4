@@ -110,7 +110,7 @@ Element* removeFromElement(Element* headOfList, int valueToRemove);
  *
  * @param      headOfList  The list to be removed
  */
-void emptyElement(Element** headOfList);
+void emptyList(Element** headOfList);
 
 /*
 ***************************** Static Functions *************************
