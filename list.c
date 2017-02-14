@@ -40,15 +40,37 @@ Element* addAtBegining(Element* headOfList, int value)
 	return(newElement);
 }
 
+Element* addAtIndex(Element* headOfList, int value, unsigned int index)
+{
+	Element* newElement = createElement(value);
+	if(index == 0)
+	{
+		newElement->next = headOfList;
+		headOfList = newElement;
+	}
+	else
+	{
+		int i = 0;
+		Element* intermediateElement = headOfList;
+		while(intermediateElement->next != NULL && i < index-1)
+		{
+			intermediateElement = intermediateElement->next;
+			i++;
+		}
+		newElement->next = intermediateElement->next;
+		intermediateElement->next = newElement;
+	}
+	return(headOfList);
+}
 /*
 ***************************** Static Functions *************************
 */
 
-Element* findTheEndOfElement(Element* headOfList)
+static Element* findTheEndOfElement(Element* headOfList)
 {
 	if(headOfList->next != NULL)
 	{
-		findTheEndOfElement(headOfList->next);
+		Element* intermediateElement = findTheEndOfElement(headOfList->next);
 	}
 	else
 	{
@@ -56,7 +78,7 @@ Element* findTheEndOfElement(Element* headOfList)
 	}
 }
 
-Element* createElement(int value)
+static Element* createElement(int value)
 {
 	Element* newElement = malloc(sizeof(Element));
 	newElement->value = value;

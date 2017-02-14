@@ -63,7 +63,7 @@ Element* addAtEnd(Element* headOfList, int value);
 Element* addAtBegining(Element* headOfList, int value);
 
 /**
- * @brief      Adds an element ata given index in the list.
+ * @brief      Adds an element at a given index in the list.
  *
  * @param      headOfList  The list where the element will be added
  * @param[in]  value       The value of the element to add
