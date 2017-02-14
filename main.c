@@ -22,5 +22,8 @@ int main()
 	myList = addAtEnd(myList,3);
 	myList = addAtEnd(myList,8);
 	printElement(myList);
+	myList = addAtBegining(myList,3);
+	myList = addAtBegining(myList,7);
+	printElement(myList);
 	return 0;
 }

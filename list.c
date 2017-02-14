@@ -33,6 +33,13 @@ Element* addAtEnd(Element* headOfList, int value)
 	return(headOfList);
 }
 
+Element* addAtBegining(Element* headOfList, int value)
+{
+	Element* newElement = createElement(value);
+	newElement->next=headOfList;
+	return(newElement);
+}
+
 /*
 ***************************** Static Functions *************************
 */
